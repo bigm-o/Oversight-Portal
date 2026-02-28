@@ -1,0 +1,29 @@
+# GLOBAL EXCLUSIONS
+*.cjs
+*.mjs
+*.sql
+*.log
+*.bak
+*.tmp
+node_modules/
+.DS_Store
+
+# Advanced Agent Exclusions
+agent/
+.agents/
+*_policy.md
+plan.md
+todo.md
+scratchpad.md
+implementation.md
+
+# Application specific
+appsettings.json
+appsettings.*.json
+.env*
+*.secrets
+*.pem
+bin/
+obj/
+dist/
+TestResults/

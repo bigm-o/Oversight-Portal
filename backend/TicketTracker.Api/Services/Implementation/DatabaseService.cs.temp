@@ -1,0 +1,33 @@
+    public async Task<bool> UpdateUserPermissionsAsync(int userId, string permissionsJson)
+    {
+        try
+        {
+            using var connection = await GetConnectionAsync();
+            var sql = "UPDATE users SET permissions = @Permissions::jsonb WHERE id = @Id";
+            var rowsAffected = await connection.ExecuteAsync(sql, new { Permissions = permissionsJson, Id = userId });
+            _logger.LogInformation("UpdateUserPermissionsAsync: UserId={UserId}, RowsAffected={Rows}, Permissions={Permissions}", userId, rowsAffected, permissionsJson);
+            return rowsAffected > 0;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error updating permissions for user {UserId}", userId);
+            return false;
+        }
+    }
+
+    public async Task<bool> UpdateUserStatusAsync(int userId, bool isActive)
+    {
+        try
+        {
+            using var connection = await GetConnectionAsync();
+            var sql = "UPDATE users SET is_active = @IsActive WHERE id = @Id";
+            var rowsAffected = await connection.ExecuteAsync(sql, new { IsActive = isActive, Id = userId });
+            _logger.LogInformation("UpdateUserStatusAsync: UserId={UserId}, IsActive={IsActive}, RowsAffected={Rows}", userId, isActive, rowsAffected);
+            return rowsAffected > 0;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error updating status for user {UserId}", userId);
+            return false;
+        }
+    }

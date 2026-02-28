@@ -1,0 +1,79 @@
+@import './fonts.css';
+@import './tailwind.css';
+@import './theme.css';
+
+/* Custom Scrollbar for Kanban Board */
+.custom-scrollbar::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Table Styles for NIBSSGPT and Markdown */
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.875rem;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.prose th {
+  background-color: #f8fafc;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  padding: 0.875rem 1rem;
+  text-align: left;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.75rem;
+  color: #475569;
+}
+
+.dark .prose th {
+  background-color: rgba(30, 41, 59, 0.5);
+  border: 1px solid rgba(51, 65, 85, 0.5);
+  color: #94a3b8;
+}
+
+.prose td {
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  padding: 0.875rem 1rem;
+  color: #334155;
+}
+
+.dark .prose td {
+  border: 1px solid rgba(51, 65, 85, 0.5);
+  color: #cbd5e1;
+}
+
+.prose tr:nth-child(even) {
+  background-color: #f1f5f9;
+}
+
+.dark .prose tr:nth-child(even) {
+  background-color: rgba(30, 41, 59, 0.3);
+}
+
+.prose tr:hover {
+  background-color: rgba(16, 185, 129, 0.05);
+}
+
+.dark .prose tr:hover {
+  background-color: rgba(16, 185, 129, 0.05);
+}
